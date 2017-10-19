@@ -32,6 +32,7 @@ class EckInlineEntityFormController extends EntityInlineEntityFormController {
   public function entityForm($entity_form, &$form_state) {
     $entity_form = array_merge($entity_form, eck__entity__form($entity_form, $form_state, $entity_form['#entity']));
     unset($entity_form['submit']);
+    $this->entityFormTranslation($entity_form);
     return $entity_form;
   }
 }
